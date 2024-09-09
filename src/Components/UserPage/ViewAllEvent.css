@@ -1,0 +1,38 @@
+.events-container {
+  padding: 20px;
+}
+
+.events-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.expired-events-section {
+  margin-top: 40px;
+}
+
+.expired-event {
+  width: 20% ;
+  opacity: 0.6;
+  background-color: #f8d7da; /* Light red background for expired events */
+  border: 1px solid #df9299; /* Light red border for expired events */
+}
+
+.events-list .card {
+  width: 30%;
+  box-sizing: border-box;
+}
+
+@media (max-width: 992px) {
+  .events-list .card {
+    flex: 1 1 calc(50% - 20px);
+  }
+}
+
+@media (max-width: 768px) {
+  .events-list .card {
+    flex: 1 1 100%;
+  }
+}

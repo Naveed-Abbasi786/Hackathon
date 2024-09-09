@@ -1,0 +1,48 @@
+.jobs-container {
+    padding: 20px;
+    max-width: 1200px;
+    margin: auto;
+    text-align: center;
+  }
+  
+  .filter-buttons {
+    margin-bottom: 20px;
+  }
+  
+  .jobs-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-gap: 20px;
+    justify-items: center;
+  }
+  
+  .job-card {
+    width: 100%;
+    max-width: 350px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border: none;
+    padding: 15px;
+  }
+  
+  .job-header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+ 
+  
+  .job-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .job-salary {
+    font-weight: bold;
+    background-color :#E0E0E0 ;
+    padding: 3px 10px;
+    border-radius: 5px;
+    font-weight: 500;
+}
+ 

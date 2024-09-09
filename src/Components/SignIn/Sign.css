@@ -1,0 +1,88 @@
+body {
+    background-color: #f7f7f7;
+    font-family: Arial, sans-serif;
+  }
+  
+  .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  
+  .signin {
+    background-color: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    width: 400px;
+  }
+  
+  .signin >h2 {
+    text-align: center;
+    margin-bottom: 30px;
+    font-weight: 700;
+    color: #3f77bc;
+  }
+  .signin>h2>span{
+    color: #8dc63f;
+
+  }
+  .floating-label {
+    margin-bottom: 20px;
+  }
+  
+  .signin-options {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  /* .show-password-icon {
+    position: absolute;
+    right: 10px;
+    top: 42%;
+    cursor: pointer;
+  } */
+  
+  .Checkbox{
+    cursor: pointer;
+  }
+  .signin-button {
+    width: 100%;
+    background-color: #366db7;
+    border: none;
+    padding: 12px;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: bold;
+  }
+  
+  .signin-button:hover {
+    background-color: #8dc63f;
+  }
+  
+  .signup-link {
+    text-align: center;
+    margin-top: 20px;
+  }
+  
+  .signup-link a {
+    color: #00bfa6;
+    text-decoration: none;
+  }
+  
+  .signup-link a:hover {
+    text-decoration: underline;
+  }
+  
+  .forgot-password {
+    color: #00bfa6;
+    text-decoration: none;
+  }
+  
+  .forgot-password:hover {
+    text-decoration: underline;
+  }
+  

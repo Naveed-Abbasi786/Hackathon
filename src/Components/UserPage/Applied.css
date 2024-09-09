@@ -1,0 +1,52 @@
+.user-applied-jobs-container {
+    padding: 20px;
+    background-color: #f9f9f9;
+  }
+  
+  .user-applied-jobs-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+  }
+  
+  .user-applied-jobs-list .card {
+    width: 100%;
+    max-width: 300px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .user-applied-jobs-list .card-body {
+    padding: 20px;
+  }
+  
+  .user-applied-jobs-list .card-title {
+    font-size: 1.25rem;
+    font-weight: bold;
+  }
+  
+  .user-applied-jobs-list .card-text {
+    font-size: 1rem;
+    color: #333;
+  }
+  
+  .user-applied-jobs-list .card-text.status {
+    color: #555;
+  }
+  
+  .d-flex {
+    display: flex;
+  }
+  
+  .gap-5 {
+    gap: 20px;
+  }
+  
+  .circular-progress {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  
