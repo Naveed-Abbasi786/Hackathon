@@ -16,16 +16,16 @@ function ApplyJobModal({ show, onHide, job, fetchJobs }) {
   const [pic, setPic] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
   const [emailConfirmed, setEmailConfirmed] = useState(false);
-  const [loggedIn, setLoggedIn] = useState(false);
+  const LoggedIn =false;
   const [isApplied, setIsApplied] = useState(false);
 
   useEffect(() => {
     const unloggedIn = onAuthStateChanged(auth, (user) => {
       if (user) {
         setEmail(user.email);
-        setLoggedIn(true);
+        LoggedIn(true);
       } else {
-        setLoggedIn(false);
+        LoggedIn(false);
         setEmail('');
       }
     });

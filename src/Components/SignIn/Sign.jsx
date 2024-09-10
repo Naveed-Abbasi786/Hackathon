@@ -100,7 +100,7 @@ export default function SignIn() {
 
               <div className='signin-options'>
                 <Form.Check type="checkbox" label="Remember Me" className='Checkbox' />
-                <a  className='forgot-password'>Forgot Password</a>
+                <Link to='/'  className='forgot-password'>Forgot Password</Link>
               </div>
 
               <Button variant="primary" className='signin-button' type="submit" disabled={loading}>
