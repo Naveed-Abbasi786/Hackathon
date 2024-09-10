@@ -23,7 +23,7 @@ export default function SignIn() {
     setLoading(true); 
   
     try {
-      const userCredential = await signInWithEmailAndPassword(auth, values.emailCheck, values.passwordCheck);
+       await signInWithEmailAndPassword(auth, values.emailCheck, values.passwordCheck);
   
       notifySuccess("Login Successfully");
   

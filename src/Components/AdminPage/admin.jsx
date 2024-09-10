@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import Dashboard from '../Dashbord/dashboard'
 
 export default function Admin() {

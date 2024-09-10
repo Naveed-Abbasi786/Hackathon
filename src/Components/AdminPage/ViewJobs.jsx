@@ -11,7 +11,7 @@ export default function ViewAllJobs() {
   const [filteredJobs, setFilteredJobs] = useState([]);
   const [loading, setLoading] = useState(false);
   const [selectedCategory, setSelectedCategory] = useState('all');
-  const [showJobs, setShowJobs] = useState(true);
+  const showJobs =true
 
   const categories = [
     'all',
