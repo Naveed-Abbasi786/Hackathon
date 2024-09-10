@@ -3,7 +3,6 @@ import { Box, Card, CardActions, CardContent, Button, Typography, Link } from '@
 import ArrowUpwardIcon from '@mui/icons-material/ArrowUpward';
 import ArrowDownwardIcon from '@mui/icons-material/ArrowDownward';
 import JobIcon from '@mui/icons-material/Dashboard';
-import EventReqIcon from '@mui/icons-material/Store';
 import EvenstIcon from '@mui/icons-material/Assignment';
 import ApplicationIcons from '@mui/icons-material/AppRegistration';
 const Cards = () => {

@@ -3,16 +3,14 @@ import { Chart as ChartJS, CategoryScale, LinearScale, PointElement, BarElement,
 import { Line } from "react-chartjs-2";
 import { Pie } from "react-chartjs-2";
 
-// Register the necessary Chart.js components
 ChartJS.register(CategoryScale, LinearScale, BarElement, PointElement, LineElement, Title, Tooltip, Legend, Filler, ArcElement);
 
 export default function MixedChart() {
-  // Line chart data and configuration
   const lineChartData = {
-    labels: ["Nov 01", "Nov 02", "Nov 03", "Nov 04", "Nov 05", "Nov 06", "Nov 07"], // x-axis labels
+    labels: ["Nov 01", "Nov 02", "Nov 03", "Nov 04", "Nov 05", "Nov 06", "Nov 07"], 
     datasets: [
       {
-        type: 'bar', // Bar chart for Orders
+        type: 'bar', 
         label: 'Jobs',
         backgroundColor: '#88e060',
         borderColor: '#88e060',
@@ -21,7 +19,7 @@ export default function MixedChart() {
         barThickness: 10,
       },
       {
-        type: 'bar', // Bar chart for Customers
+        type: 'bar', 
         label: 'Events',
         backgroundColor: 'rgba(54, 162, 235, 0.5)',
         borderColor: 'rgba(54, 162, 235, 1)',
@@ -31,17 +29,16 @@ export default function MixedChart() {
         barThickness: 10,
       },
       {
-        type: 'line', // Line chart for Earnings
+        type: 'line', 
         label: 'Application',
         borderColor: 'rgb(75, 192, 192)',
         data: [15, 30, 25, 55, 65, 35, 75],
         fill: false,
-        pointRadius: 5, // Adjust or remove pointRadius if needed
+        pointRadius: 5, 
       }
     ]
   };
 
-  // Pie chart data and configuration
   const pieChartData = {
     datasets: [
       {
@@ -68,7 +65,6 @@ export default function MixedChart() {
     ],
   };
 
-  // Line chart options
   const lineChartOptions = {
     plugins: {
       legend: {

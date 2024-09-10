@@ -41,7 +41,6 @@ function MyApp() {
   const [anchorElUser, setAnchorElUser] = useState(null);
   const navigate = useNavigate();
 
-  // Firebase Auth listener
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (user) => {
       if (user) {
@@ -53,17 +52,10 @@ function MyApp() {
     return () => unsubscribe();
   }, []);
 
-  // Handlers for Add Event and Job modals
-  const handleEventShow = () => setEventModalShow(true);
-  const handleEventHide = () => setEventModalShow(false);
-  const handleJobShow = () => setJobModalShow(true);
-  const handleJobHide = () => setJobModalShow(false);
 
-  // User menu handling
   const handleOpenUserMenu = (event) => setAnchorElUser(event.currentTarget);
   const handleCloseUserMenu = () => setAnchorElUser(null);
 
-  // SignOut handler
   const handleLogOut = () => {
     signOut(auth).then(() => {
       navigate('/Signin');
@@ -88,7 +80,7 @@ function MyApp() {
 
               <Tooltip title="Open settings">
                 <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
-                  <Avatar>{auth.currentUser?.email[0]}</Avatar>
+                  <Avatar>{auth.currentUser?.email[0].toUpperCase()}</Avatar>
                 </IconButton>
               </Tooltip>
               <Menu
@@ -128,9 +120,7 @@ function MyApp() {
         </Toolbar>
       </AppBar>
 
-      {/* Modals for Add Event and Add Job */}
-      {eventModalShow && <AddEvent onClose={handleEventHide} />}
-      {jobModalShow && <AddJob onClose={handleJobHide} />}
+     
     </ThemeProvider>
   );
 }

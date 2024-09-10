@@ -4,7 +4,7 @@ import { collection, onSnapshot, doc, getDoc, updateDoc } from 'firebase/firesto
 import { db } from '../Firebase/firebaseConfig';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import './EventRequest.css'; // Custom CSS file
+import './EventRequest.css'; 
 
 const ManageRequests = () => {
   const [events, setEvents] = useState([]);
@@ -17,10 +17,8 @@ const ManageRequests = () => {
         ...doc.data()
       }));
 
-      // Filter events to show only those with at least one request
       const eventsWithRequests = eventsList.filter(event => event.requests && event.requests.length > 0);
 
-      // Sort by date descending
       eventsWithRequests.sort((a, b) => new Date(b.date) - new Date(a.date));
 
       setEvents(eventsWithRequests);

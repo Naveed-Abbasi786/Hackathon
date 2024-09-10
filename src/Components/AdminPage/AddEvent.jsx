@@ -41,14 +41,14 @@ const AddEventModal = ({ show, onHide }) => {
       setImageFile(null);
 
       toast.success('Event added successfully!', {
-        position: 'top-right',  // Use string for position
+        position: 'top-right',  
       });
 
       onHide(); // Close the modal
     } catch (error) {
       console.error('Error adding event:', error);
       toast.error('Failed to add event. Try again later.', {
-        position: 'top-right',  // Use string for position
+        position: 'top-right',  
       });
     } finally {
       setLoading(false);

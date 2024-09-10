@@ -48,7 +48,7 @@ export default function Register() {
       })
       .catch((error) => {
         setLoading(false);
-        notifyError(error.message);
+        notifyError(`'error'${error}`);
         console.error(error);
       });
   };

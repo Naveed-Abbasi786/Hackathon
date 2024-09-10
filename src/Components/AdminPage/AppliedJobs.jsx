@@ -8,7 +8,7 @@ import { collection, getDocs, updateDoc, doc } from 'firebase/firestore';
 export default function AdminAppliedJobs() {
   const [appliedJobs, setAppliedJobs] = useState([]);
   const [loading, setLoading] = useState(false);
-  const [updating, setUpdating] = useState(null); // To track updating status for a specific job
+  const [updating, setUpdating] = useState(null); 
 
   useEffect(() => {
     const fetchAppliedJobs = async () => {
@@ -20,7 +20,6 @@ export default function AdminAppliedJobs() {
           id: doc.id,
           ...doc.data(),
         }));
-        // Sort jobs so that new jobs (not yet processed) are at the top
         jobsList.sort((a, b) => new Date(b.timestamp) - new Date(a.timestamp));
         setAppliedJobs(jobsList);
       } catch (error) {
@@ -34,11 +33,11 @@ export default function AdminAppliedJobs() {
   }, []);
 
   const handleStatusChange = async (jobId, newStatus) => {
-    setUpdating(jobId); // Mark this job as being updated
+    setUpdating(jobId); 
     try {
       const jobDocRef = doc(db, 'AppliedJobs', jobId);
       await updateDoc(jobDocRef, { status: newStatus });
-      // Update the status locally without refreshing the list
+
       setAppliedJobs(prevJobs =>
         prevJobs.map(job =>
           job.id === jobId ? { ...job, status: newStatus } : job
@@ -47,7 +46,7 @@ export default function AdminAppliedJobs() {
     } catch (error) {
       console.error('Error updating job status:', error);
     } finally {
-      setUpdating(null); // Reset updating state
+      setUpdating(null); 
     }
   };
 

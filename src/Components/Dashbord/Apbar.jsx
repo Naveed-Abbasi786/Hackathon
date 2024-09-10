@@ -29,7 +29,6 @@ function Appbr() {
   const [eventModalShow, setEventModalShow] = useState(false);
   const [jobModalShow, setJobModalShow] = useState(false);
 
-  // Handlers for Add Event modal
   const handleEventShow = () => {
     setEventModalShow(true);
   };
@@ -38,7 +37,6 @@ function Appbr() {
     setEventModalShow(false);
   };
 
-  // Handlers for Add Job modal
   const handleJobShow = () => {
     setJobModalShow(true);
   };

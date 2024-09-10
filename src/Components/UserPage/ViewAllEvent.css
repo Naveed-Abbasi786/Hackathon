@@ -16,8 +16,8 @@
 .expired-event {
   width: 20% ;
   opacity: 0.6;
-  background-color: #f8d7da; /* Light red background for expired events */
-  border: 1px solid #df9299; /* Light red border for expired events */
+  background-color: #f8d7da; 
+  border: 1px solid #df9299; 
 }
 
 .events-list .card {

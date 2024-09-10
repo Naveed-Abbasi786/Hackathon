@@ -3,7 +3,6 @@ import { Button, Card, Spinner, Modal } from 'react-bootstrap';
 import { collection, getDocs, deleteDoc, doc } from 'firebase/firestore';
 import { db } from '../Firebase/firebaseConfig';
 import { toast } from 'react-toastify';
-import { useNavigate } from 'react-router-dom';
 import 'react-toastify/dist/ReactToastify.css';
 
 const ViewEvents = () => {
@@ -12,7 +11,6 @@ const ViewEvents = () => {
   const [showEventDetails, setShowEventDetails] = useState(false);
   const [selectedEvent, setSelectedEvent] = useState(null);
   const [showExpiredEvents, setShowExpiredEvents] = useState(false);
-  const navigate = useNavigate();
 
   useEffect(() => {
     const fetchEvents = async () => {
@@ -81,7 +79,6 @@ const ViewEvents = () => {
         <Spinner animation="border" />
       ) : (
         <>
-          {/* Show button after loading */}
           <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
         <h1>Events</h1>
             <Button 
@@ -98,7 +95,6 @@ const ViewEvents = () => {
               <p>No events available</p>
             ) : (
               <>
-                {/* Reorder events based on the "Show Expired Events" toggle */}
                 <div className="active-events d-flex gap-4 flex-wrap">
                   {showExpiredEvents
                     ? events

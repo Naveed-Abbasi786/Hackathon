@@ -2,9 +2,9 @@ import React, { useState, useEffect } from 'react';
 import Card from 'react-bootstrap/Card';
 import Button from 'react-bootstrap/Button';
 import CircularProgress from '@mui/material/CircularProgress';
-import { db } from '../Firebase/firebaseConfig'; // Ensure correct Firebase config path
+import { db } from '../Firebase/firebaseConfig'; 
 import { collection, getDocs, doc, deleteDoc } from 'firebase/firestore';
-import './ViewJobs.css'; // Add custom CSS for layout and styling
+import './ViewJobs.css'; 
 
 export default function ViewAllJobs() {
   const [jobs, setJobs] = useState([]);
@@ -21,13 +21,13 @@ export default function ViewAllJobs() {
     'graphicDesignJobs',
   ];
 
-  // Fetch jobs from all categories
+  
   useEffect(() => {
     const fetchJobs = async () => {
-      setLoading(true); // Start loading spinner
+      setLoading(true); 
       try {
         const jobsList = [];
-        for (const category of categories.slice(1)) { // Exclude 'all' category from fetching
+        for (const category of categories.slice(1)) { 
           const categoryCollection = collection(db, category);
           const categorySnapshot = await getDocs(categoryCollection);
           categorySnapshot.docs.forEach(doc => {
@@ -39,27 +39,25 @@ export default function ViewAllJobs() {
           });
         }
 
-        setJobs(jobsList); // Store jobs in state
-        setFilteredJobs(jobsList); // Initialize filteredJobs to show all jobs
+        setJobs(jobsList); 
+        setFilteredJobs(jobsList); 
       } catch (error) {
         console.error('Error fetching jobs:', error);
       } finally {
-        setLoading(false); // Stop loading spinner
+        setLoading(false); 
       }
     };
 
     if (showJobs) {
-      fetchJobs(); // Only fetch jobs when the user clicks to view jobs
+      fetchJobs(); 
     }
   }, [showJobs]);
 
-  // Handle job deletion
   const deleteJob = async (category, id) => {
     if (window.confirm('Are you sure you want to delete this job?')) {
       try {
         await deleteDoc(doc(db, category, id)); // Delete job from Firestore
-        
-        // Optimistically update the jobs in state
+    
         setJobs(prevJobs => prevJobs.filter(job => job.id !== id));
         setFilteredJobs(prevJobs => 
           prevJobs.filter(job => (selectedCategory === 'all' || job.category === selectedCategory) && job.id !== id)
@@ -102,9 +100,7 @@ export default function ViewAllJobs() {
                 <div className="job-header">
                   <div>
                     <Card.Title>{job.jobTitle}</Card.Title>
-                    {/* <Card.Subtitle className="mb-2  text-muted">
-                     Saylani Welfare
-                    </Card.Subtitle> */}
+                
                   </div>
                 </div>
                 <Card.Text>{job.jobDescription}</Card.Text>

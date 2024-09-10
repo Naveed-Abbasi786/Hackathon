@@ -5,7 +5,7 @@ import { db } from '../Firebase/firebaseConfig';
 import { collection, query, where, getDocs } from 'firebase/firestore';
 import { onAuthStateChanged } from 'firebase/auth';
 import { auth } from '../Firebase/firebaseConfig';
-import './Applied.css'; // Import the CSS file
+import './Applied.css'; 
 import Appbar from '../UserPage/Appbaar'
 import Navbar from '../UserPage/Navbar'
 
@@ -14,10 +14,9 @@ export default function UserAppliedJobs() {
   const [loading, setLoading] = useState(false);
   const [userEmail, setUserEmail] = useState('');
 
-  // Fetch applied jobs when userEmail is set
   useEffect(() => {
     const fetchAppliedJobs = async () => {
-      if (!userEmail) return; // No need to fetch if email is not available
+      if (!userEmail) return; 
 
       setLoading(true);
       try {
@@ -39,13 +38,12 @@ export default function UserAppliedJobs() {
     fetchAppliedJobs();
   }, [userEmail]);
 
-  // Set user email when authentication state changes
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (user) => {
       if (user) {
         setUserEmail(user.email);
       } else {
-        setUserEmail(''); // Clear email if user is logged out
+        setUserEmail(''); 
       }
     });
 

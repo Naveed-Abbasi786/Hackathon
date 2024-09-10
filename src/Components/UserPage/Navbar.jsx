@@ -2,34 +2,37 @@ import React from 'react';
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
-import CategoryBtn from './Categories';
 import { Link } from 'react-router-dom';
+
 export default function Navbaar() {
   return (
-    <Navbar collapseOnSelect expand="lg" style={{ backgroundColor: '#ddd', height: '60px' }} variant="light">
-      <Container>
-       
-        {/* Responsive Toggle */}
+    <Navbar collapseOnSelect expand="lg" style={{ backgroundColor: '#ddd' }} variant="light">
+      <Container style={{height:"100%"}}>
+
+        {/* Navbar Brand */}
+        <Navbar.Brand>Job Portal</Navbar.Brand>
+
+        {/* Toggle Button for Responsive View */}
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
 
-        {/* Navbar Links */}
+        {/* Navbar Collapse */}
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="me-auto">
-          <Nav.Link  >
-          <Link style={{textDecoration:'none', color: 'black'}} to='/ViewJob'>
-           Find Job
-          </Link>
-          </Nav.Link>
-          <Nav.Link >
-          <Link style={{textDecoration:'none', color: 'black'}} to='/Events'>
-          Events
-          </Link>
-          </Nav.Link>
-          <Nav.Link to='/ViewJob' >
-          <Link style={{textDecoration:'none', color: 'black'}} to='/AppliedJob'>
-          Applied Jobs
-          </Link>
-          </Nav.Link>
+            <Nav.Link as="div">
+              <Link style={{ textDecoration: 'none', color: 'black' }} to='/ViewJob'>
+                Find Job
+              </Link>
+            </Nav.Link>
+            <Nav.Link as="div">
+              <Link style={{ textDecoration: 'none', color: 'black'  }} to='/Events'>
+                Events
+              </Link>
+            </Nav.Link>
+            <Nav.Link as="div">
+              <Link style={{ textDecoration: 'none', color: 'black' }} to='/AppliedJob'>
+                Applied Jobs
+              </Link>
+            </Nav.Link>
           </Nav>
 
           {/* Contact Info */}

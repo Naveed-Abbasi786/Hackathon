@@ -22,8 +22,8 @@ import ApplicationsJobs from '../AdminPage/AppliedJobs'
 import ViewEvents from '../AdminPage/ViewEvents'
 import DashboardContent from './dashboardContent'
 import EventRequest from '../AdminPage/EventRequest'
-import { onAuthStateChanged,signOut } from 'firebase/auth'; // Ensure you have Firebase imported
-import { auth } from '../Firebase/firebaseConfig'; // Update with your Firebase config path
+import { onAuthStateChanged,signOut } from 'firebase/auth'; 
+import { auth } from '../Firebase/firebaseConfig'; 
 import { useNavigate } from 'react-router-dom';
 
 const drawerWidth = 240;
@@ -141,8 +141,8 @@ const navigate=useNavigate()
             flexGrow: 1,
             backgroundColor: '#f4f7fd',
             p: 3,
-            width: 'calc(100vw - 260px)', // Adjust for drawer width
-            minHeight: '100vh' // Ensures the background covers full height
+            width: 'calc(100vw - 260px)', 
+            minHeight: '100vh' 
           }}
         >
           <Toolbar />

@@ -20,31 +20,26 @@ export default function SignIn() {
   const notifyError = (message) => toast.error(message);
 
   const handleSubmit = async (values) => {
-    setLoading(true); // Set loading to true when starting the async operation
+    setLoading(true); 
   
     try {
-      // Sign in with email and password
       const userCredential = await signInWithEmailAndPassword(auth, values.emailCheck, values.passwordCheck);
       const user = userCredential.user;
   
-      // Show success message
       notifySuccess("Login Successfully");
-      console.log(user);
   
-      // Check if the logged-in email is "admin@admin.com"
       if (values.emailCheck === 'admin@admin.com') {
         setTimeout(() => {
-          navigate('/Admin');  // Redirect to Admin page
+          navigate('/Admin');  
         }, 1500);
       } else {
         setTimeout(() => {
-          navigate('/User');  // Redirect to User page
+          navigate('/User');  
         }, 1500);
       }
     } catch (error) {
-      // Handle authentication errors
       console.error('Error signing in:', error.message);
-      toast.error(`Error: ${error.message}`, {
+      toast.error(`Please Check and Email Password`, {
         position: "top-right",
         autoClose: 2000,
         hideProgressBar: false,
@@ -54,7 +49,6 @@ export default function SignIn() {
         progress: undefined,
       });
     } finally {
-      // Always set loading to false after operation completes
       setLoading(false);
     }
   };

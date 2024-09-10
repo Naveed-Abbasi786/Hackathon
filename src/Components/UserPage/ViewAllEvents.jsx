@@ -4,7 +4,7 @@ import { collection, onSnapshot, doc, getDoc, updateDoc } from 'firebase/firesto
 import { db, auth } from '../Firebase/firebaseConfig';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import './ViewAllEvent.css'; // Import a separate CSS file for additional styles
+import './ViewAllEvent.css'; 
 import Appbar from '../UserPage/Appbaar'
 import Navbar from '../UserPage/Navbar'
 const ViewEvents = () => {
@@ -19,7 +19,6 @@ const ViewEvents = () => {
         ...doc.data()
       }));
 
-      // Sort by date descending
       eventsList.sort((a, b) => new Date(b.date) - new Date(a.date));
 
       setEvents(eventsList);
@@ -53,7 +52,7 @@ const ViewEvents = () => {
 
         if (!requests.includes(userEmail)) {
           requests.push(userEmail);
-          requestStatuses[userEmail] = 'Pending'; // Set status to 'Pending'
+          requestStatuses[userEmail] = 'Pending'; 
           await updateDoc(eventDocRef, { requests, requestStatuses });
           toast.success('Join request sent to admin!');
         } else {

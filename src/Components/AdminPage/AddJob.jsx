@@ -7,7 +7,6 @@ import { db } from '../Firebase/firebaseConfig';
 import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import CircularProgress from '@mui/material/CircularProgress';
-import zIndex from '@mui/material/styles/zIndex';
 
 function AddJobModal(props) {
   const [jobTitle, setJobTitle] = useState('');
@@ -52,7 +51,7 @@ function AddJobModal(props) {
       setJobDescription('');
       setSalary('');
       setCategory('');
-      props.onHide(); // Hide modal after successful operation
+      props.onHide(); 
     } catch (error) {
       toast.error('Error adding job: ' + error.message, {
         position: "top-right",

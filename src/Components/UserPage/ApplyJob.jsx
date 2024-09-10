@@ -66,7 +66,6 @@ function ApplyJobModal({ show, onHide, job, fetchJobs }) {
       setEmailConfirmed(false);
       setIsApplied(true);
 
-      // Update the job list to reflect the application
       fetchJobs();
 
       setTimeout(() => {
