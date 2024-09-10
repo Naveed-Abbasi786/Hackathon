@@ -51,7 +51,7 @@ export default function ViewAllJobs() {
     if (showJobs) {
       fetchJobs(); 
     }
-  }, [showJobs,selectedCategory]);
+  }, [showJobs]);
 
   const deleteJob = async (category, id) => {
     if (window.confirm('Are you sure you want to delete this job?')) {

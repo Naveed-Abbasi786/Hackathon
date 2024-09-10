@@ -16,8 +16,8 @@ function ApplyJobModal({ show, onHide, job, fetchJobs }) {
   const [pic, setPic] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
   const [emailConfirmed, setEmailConfirmed] = useState(false);
-  const LoggedIn =false;
   const [isApplied, setIsApplied] = useState(false);
+  const LoggedIn=false
 
   useEffect(() => {
     const unloggedIn = onAuthStateChanged(auth, (user) => {
@@ -30,7 +30,7 @@ function ApplyJobModal({ show, onHide, job, fetchJobs }) {
       }
     });
     return () => unloggedIn();
-  }, []);
+  },[LoggedIn]);
 
   const handleApplyJob = async () => {
     setIsLoading(true);
