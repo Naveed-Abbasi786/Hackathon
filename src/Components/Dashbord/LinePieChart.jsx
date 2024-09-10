@@ -25,7 +25,6 @@ export default function MixedChart() {
         borderColor: 'rgba(54, 162, 235, 1)',
         borderWidth:2,
         data: [10, 40, 20, 50, 70, 30, 60],
-        borderWidth: 1,
         barThickness: 10,
       },
       {

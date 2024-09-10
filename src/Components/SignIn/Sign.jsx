@@ -24,7 +24,6 @@ export default function SignIn() {
   
     try {
       const userCredential = await signInWithEmailAndPassword(auth, values.emailCheck, values.passwordCheck);
-      const user = userCredential.user;
   
       notifySuccess("Login Successfully");
   
@@ -39,7 +38,7 @@ export default function SignIn() {
       }
     } catch (error) {
       console.error('Error signing in:', error.message);
-      toast.error(`Please Check and Email Password`, {
+      notifyError(`Please Check and Email Password`, {
         position: "top-right",
         autoClose: 2000,
         hideProgressBar: false,
@@ -101,7 +100,7 @@ export default function SignIn() {
 
               <div className='signin-options'>
                 <Form.Check type="checkbox" label="Remember Me" className='Checkbox' />
-                <a href="#" className='forgot-password'>Forgot Password</a>
+                <a  className='forgot-password'>Forgot Password</a>
               </div>
 
               <Button variant="primary" className='signin-button' type="submit" disabled={loading}>

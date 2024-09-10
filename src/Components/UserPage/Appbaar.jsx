@@ -11,13 +11,10 @@ import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
 import Tooltip from '@mui/material/Tooltip';
 import Typography from '@mui/material/Typography';
-import { auth, db } from '../Firebase/firebaseConfig';
+import { auth } from '../Firebase/firebaseConfig';
 import { onAuthStateChanged, signOut } from 'firebase/auth';
 import { useNavigate } from 'react-router-dom';
 import logoText from '../../Config/Assets/Img/SaylaniLogo.png';
-import { collection, getDocs } from 'firebase/firestore';
-import AddJob from '../AdminPage/AddJob';
-import AddEvent from '../AdminPage/AddEvent';
 
 const theme = createTheme({
   palette: {
@@ -35,8 +32,7 @@ const theme = createTheme({
 });
 
 function MyApp() {
-  const [eventModalShow, setEventModalShow] = useState(false);
-  const [jobModalShow, setJobModalShow] = useState(false);
+  
   const [loggedIn, setLoggedIn] = useState(false);
   const [anchorElUser, setAnchorElUser] = useState(null);
   const navigate = useNavigate();
