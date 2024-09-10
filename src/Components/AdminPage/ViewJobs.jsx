@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useMemo } from 'react';
 import Card from 'react-bootstrap/Card';
 import Button from 'react-bootstrap/Button';
 import CircularProgress from '@mui/material/CircularProgress';
@@ -11,17 +11,16 @@ export default function ViewAllJobs() {
   const [filteredJobs, setFilteredJobs] = useState([]);
   const [loading, setLoading] = useState(false);
   const [selectedCategory, setSelectedCategory] = useState('all');
-  const showJobs =true
+  const showJobs = true;
 
-  const categories = [
+  const categories = useMemo(() => [
     'all',
     'frontendJobs',
     'backendJobs',
     'uiuxJobs',
     'graphicDesignJobs',
-  ];
+  ], []);
 
-  
   useEffect(() => {
     const fetchJobs = async () => {
       setLoading(true); 
@@ -51,12 +50,12 @@ export default function ViewAllJobs() {
     if (showJobs) {
       fetchJobs(); 
     }
-  }, [showJobs]);
+  }, [showJobs, categories]);  
 
   const deleteJob = async (category, id) => {
     if (window.confirm('Are you sure you want to delete this job?')) {
       try {
-        await deleteDoc(doc(db, category, id)); // Delete job from Firestore
+        await deleteDoc(doc(db, category, id)); 
     
         setJobs(prevJobs => prevJobs.filter(job => job.id !== id));
         setFilteredJobs(prevJobs => 
@@ -100,7 +99,6 @@ export default function ViewAllJobs() {
                 <div className="job-header">
                   <div>
                     <Card.Title>{job.jobTitle}</Card.Title>
-                
                   </div>
                 </div>
                 <Card.Text>{job.jobDescription}</Card.Text>

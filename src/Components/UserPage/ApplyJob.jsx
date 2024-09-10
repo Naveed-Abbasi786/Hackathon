@@ -17,20 +17,17 @@ function ApplyJobModal({ show, onHide, job, fetchJobs }) {
   const [isLoading, setIsLoading] = useState(false);
   const [emailConfirmed, setEmailConfirmed] = useState(false);
   const [isApplied, setIsApplied] = useState(false);
-  const LoggedIn=false
 
   useEffect(() => {
     const unloggedIn = onAuthStateChanged(auth, (user) => {
       if (user) {
         setEmail(user.email);
-        LoggedIn(true);
       } else {
-        LoggedIn(false);
         setEmail('');
       }
     });
     return () => unloggedIn();
-  },[LoggedIn]);
+  }, []);
 
   const handleApplyJob = async () => {
     setIsLoading(true);
